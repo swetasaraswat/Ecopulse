@@ -1,0 +1,31 @@
+{
+    "user_id": "demo",
+    "window_start": "2026-09-15",
+    "window_end": "2026-09-21",
+    "source": "rules",
+    "fallback_reason": "GEMINI_API_KEY is not set",
+    "summary": "Over the last 7 days you averaged 15.5 kg CO2e a day, mostly from home energy. The last few days were higher than the days before.",
+    "suggestions": [
+        {
+            "candidate_id": "electricity_cut",
+            "title": "Trim home electricity by about 10 percent",
+            "message": "Use about 6.9 kWh less a week: AC at 24 to 26 degrees, switch off standby devices, LED bulbs. That could save about 5.02 kg CO2e a week.",
+            "category": "energy",
+            "weekly_saving_kg_co2e": 5.02
+        },
+        {
+            "candidate_id": "beef_to_vegetarian",
+            "title": "Swap some beef meals",
+            "message": "Swap 1 of your beef or buffalo meals a week for a vegetarian option like dal, rajma or paneer. That could save about 4.6 kg CO2e a week.",
+            "category": "food",
+            "weekly_saving_kg_co2e": 4.6
+        },
+        {
+            "candidate_id": "car_petrol_to_bus",
+            "title": "Take the bus for some car trips",
+            "message": "Swap about 30 km of car driving a week for the bus, starting with a route you already know. That could save about 1.93 kg CO2e a week.",
+            "category": "transport",
+            "weekly_saving_kg_co2e": 1.93
+        }
+    ]
+}

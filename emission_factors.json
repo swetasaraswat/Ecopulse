@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "version": "0.1.0",
+    "unit": "kg CO2e",
+    "disclaimer": "Rounded, approximate values for personal footprint estimates. Not audit-grade. Check the sources and replace values with your own data before using the numbers for reporting.",
+    "confidence_levels": {
+      "derived": "Calculated from a typical published fuel or grid factor plus a stated assumption (for example fuel economy).",
+      "approximate": "Rounded typical value in line with published ranges, not tied to one exact table.",
+      "assumption": "Rough estimate built on a stated portion size or usage assumption. Treat as low confidence."
+    }
+  },
+  "factors": {
+    "car_petrol": {
+      "category": "transport", "label": "Petrol car", "unit": "km", "kind": "fixed",
+      "kg_co2e_per_unit": 0.165, "confidence": "derived",
+      "source": "Typical published fuel factor (petrol is about 2.31 kg CO2 per litre)",
+      "note": "2.31 kg CO2/L divided by an assumed 14 km/L. Tailpipe emissions only, per vehicle-km."
+    },
+    "car_diesel": {
+      "category": "transport", "label": "Diesel car", "unit": "km", "kind": "fixed",
+      "kg_co2e_per_unit": 0.158, "confidence": "derived",
+      "source": "Typical published fuel factor (diesel is about 2.68 kg CO2 per litre)",
+      "note": "2.68 kg CO2/L divided by an assumed 17 km/L. Tailpipe emissions only, per vehicle-km."
+    },
+    "car_ev": {
+      "category": "transport", "label": "Electric car", "unit": "km", "kind": "electricity",
+      "kwh_per_unit": 0.15, "confidence": "assumption",
+      "source": "Assumed 15 kWh per 100 km, multiplied by the regional grid intensity",
+      "note": "Changes with the grid: the same trip emits less in a cleaner-grid region."
+    },
+    "two_wheeler_petrol": {
+      "category": "transport", "label": "Motorbike or scooter (petrol)", "unit": "km", "kind": "fixed",
+      "kg_co2e_per_unit": 0.051, "confidence": "derived",
+      "source": "Typical published fuel factor (petrol about 2.31 kg CO2 per litre)",
+      "note": "2.31 kg CO2/L divided by an assumed 45 km/L. Per vehicle-km, one rider."
+    },
+    "auto_rickshaw": {
+      "category": "transport", "label": "Auto-rickshaw (CNG)", "unit": "km", "kind": "fixed",
+      "kg_co2e_per_unit": 0.055, "confidence": "assumption",
+      "source": "Assumed CNG auto at about 25 km per kg CNG (about 2.75 kg CO2 per kg)",
+      "note": "About 0.11 kg per vehicle-km shared between roughly 2 passengers, per passenger-km."
+    },
+    "bus": {
+      "category": "transport", "label": "City bus", "unit": "km", "kind": "fixed",
+      "kg_co2e_per_unit": 0.10, "confidence": "approximate",
+      "source": "Published city-bus values commonly sit around 0.1 kg CO2e per passenger-km",
+      "note": "Per passenger-km. Depends heavily on how full the bus is."
+    },
+    "train": {
+      "category": "transport", "label": "Train (electric)", "unit": "km", "kind": "electricity",
+      "kwh_per_unit": 0.04, "confidence": "assumption",
+      "source": "Assumed 0.04 kWh per passenger-km, multiplied by the regional grid intensity",
+      "note": "Per passenger-km. Assumes an electrified line."
+    },
+    "metro": {
+      "category": "transport", "label": "Metro", "unit": "km", "kind": "electricity",
+      "kwh_per_unit": 0.07, "confidence": "assumption",
+      "source": "Assumed 0.07 kWh per passenger-km, multiplied by the regional grid intensity",
+      "note": "Per passenger-km."
+    },
+    "flight": {
+      "category": "transport", "label": "Flight (economy)", "unit": "km", "kind": "fixed",
+      "kg_co2e_per_unit": 0.18, "confidence": "approximate",
+      "source": "Published short-haul economy values are roughly 0.15 to 0.25 kg CO2e per passenger-km",
+      "note": "Per passenger-km, no radiative forcing uplift. Short flights emit more per km than long ones."
+    },
+    "walk_cycle": {
+      "category": "transport", "label": "Walking or cycling", "unit": "km", "kind": "fixed",
+      "kg_co2e_per_unit": 0.0, "confidence": "derived",
+      "source": "Zero by definition",
+      "note": "Food energy is not counted."
+    },
+    "electricity_home": {
+      "category": "energy", "label": "Home electricity", "unit": "kWh", "kind": "electricity",
+      "kwh_per_unit": 1.0, "confidence": "derived",
+      "source": "Regional grid intensity (see grid_intensity.json)",
+      "note": "This is the main localised factor: the same kWh has a different footprint in each region."
+    },
+    "lpg_cooking": {
+      "category": "energy", "label": "LPG for cooking", "unit": "kg", "kind": "fixed",
+      "kg_co2e_per_unit": 3.0, "confidence": "approximate",
+      "source": "Combustion of LPG is roughly 3 kg CO2e per kg",
+      "note": "Combustion only. A 14.2 kg cylinder is about 43 kg CO2e."
+    },
+    "meal_vegan": {
+      "category": "food", "label": "Vegan meal", "unit": "meal", "kind": "fixed",
+      "kg_co2e_per_unit": 0.6, "confidence": "assumption",
+      "source": "Poore & Nemecek (2018) per-kg values via Our World in Data, times assumed portion sizes",
+      "note": "Typical plant-based meal with grains, pulses and vegetables."
+    },
+    "meal_vegetarian": {
+      "category": "food", "label": "Vegetarian meal", "unit": "meal", "kind": "fixed",
+      "kg_co2e_per_unit": 0.9, "confidence": "assumption",
+      "source": "Poore & Nemecek (2018) per-kg values via Our World in Data, times assumed portion sizes",
+      "note": "Typical meal with grains, pulses, vegetables and some dairy."
+    },
+    "meal_egg": {
+      "category": "food", "label": "Egg-based meal", "unit": "meal", "kind": "fixed",
+      "kg_co2e_per_unit": 1.0, "confidence": "assumption",
+      "source": "Poore & Nemecek (2018) per-kg values via Our World in Data, times assumed portion sizes",
+      "note": "Two eggs plus sides."
+    },
+    "meal_fish": {
+      "category": "food", "label": "Fish meal", "unit": "meal", "kind": "fixed",
+      "kg_co2e_per_unit": 1.2, "confidence": "assumption",
+      "source": "Poore & Nemecek (2018) per-kg values via Our World in Data, times assumed portion sizes",
+      "note": "Wide range between wild-caught and farmed fish."
+    },
+    "meal_chicken": {
+      "category": "food", "label": "Chicken meal", "unit": "meal", "kind": "fixed",
+      "kg_co2e_per_unit": 1.7, "confidence": "assumption",
+      "source": "Poore & Nemecek (2018) per-kg values via Our World in Data, times assumed portion sizes",
+      "note": "About 120 g of chicken plus sides."
+    },
+    "meal_mutton": {
+      "category": "food", "label": "Mutton or lamb meal", "unit": "meal", "kind": "fixed",
+      "kg_co2e_per_unit": 4.5, "confidence": "assumption",
+      "source": "Poore & Nemecek (2018) per-kg values via Our World in Data, times assumed portion sizes",
+      "note": "About 100 g of lamb or mutton plus sides."
+    },
+    "meal_beef": {
+      "category": "food", "label": "Beef or buffalo meal", "unit": "meal", "kind": "fixed",
+      "kg_co2e_per_unit": 5.5, "confidence": "assumption",
+      "source": "Poore & Nemecek (2018) per-kg values via Our World in Data, times assumed portion sizes",
+      "note": "About 100 g of beef or buffalo plus sides. Buffalo and dairy-herd beef can be lower than beef-herd beef."
+    },
+    "waste_general": {
+      "category": "waste", "label": "General household waste", "unit": "kg", "kind": "fixed",
+      "kg_co2e_per_unit": 0.5, "confidence": "assumption",
+      "source": "Mixed household waste sent to landfill is commonly quoted at roughly 0.4 to 0.6 kg CO2e per kg",
+      "note": "Mostly methane from food waste. Depends a lot on local disposal."
+    }
+  }
+}

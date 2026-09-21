@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "version": "0.1.0",
+    "unit": "kg CO2e per kWh of electricity",
+    "notes": [
+      "These are grid averages for electricity generation. They do not include transmission and distribution losses.",
+      "India uses the Central Electricity Authority (CEA) figure, which counts CO2 only. The other regions use Ember / Energy Institute data via Our World in Data, which counts CO2e. The two bases are close but not identical.",
+      "India's regional grids were merged into one national grid in 2013, so India has a single national figure. Sub-national codes such as IN-UP fall back to IN."
+    ]
+  },
+  "regions": {
+    "IN": {"name": "India", "kg_co2e_per_kwh": 0.727, "year": "FY2023-24", "source": "CEA CO2 Baseline Database for the Indian Power Sector, weighted average emission factor including renewables"},
+    "US": {"name": "United States", "kg_co2e_per_kwh": 0.369, "year": "2023", "source": "Ember and Energy Institute, via Our World in Data"},
+    "GB": {"name": "United Kingdom", "kg_co2e_per_kwh": 0.238, "year": "2023", "source": "Ember and Energy Institute, via Our World in Data"},
+    "CN": {"name": "China", "kg_co2e_per_kwh": 0.582, "year": "2023", "source": "Ember and Energy Institute, via Our World in Data"},
+    "CA": {"name": "Canada", "kg_co2e_per_kwh": 0.170, "year": "2023", "source": "Ember and Energy Institute, via Our World in Data"},
+    "BR": {"name": "Brazil", "kg_co2e_per_kwh": 0.098, "year": "2023", "source": "Ember and Energy Institute, via Our World in Data"},
+    "AU": {"name": "Australia", "kg_co2e_per_kwh": 0.549, "year": "2023", "source": "Ember and Energy Institute, via Our World in Data"},
+    "BD": {"name": "Bangladesh", "kg_co2e_per_kwh": 0.691, "year": "2023", "source": "Ember and Energy Institute, via Our World in Data"},
+    "GLOBAL": {"name": "World average (fallback)", "kg_co2e_per_kwh": 0.481, "year": "2023", "source": "Ember and Energy Institute, via Our World in Data"}
+  }
+}

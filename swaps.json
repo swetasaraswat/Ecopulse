@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "version": "0.1.0",
+    "notes": [
+      "Each rule proposes a habit change for a category the user actually logged.",
+      "share is the fraction of last week's activity that a realistic person could move or cut. These are assumptions, not measurements.",
+      "The saving is calculated from the emission factor model, never written by the language model."
+    ]
+  },
+  "rules": [
+    {"id": "car_petrol_to_bus", "from": "car_petrol", "to": "bus", "share": 0.30, "category": "transport",
+     "title": "Take the bus for some car trips",
+     "action": "Swap about {shifted} km of car driving a week for the bus, starting with a route you already know."},
+    {"id": "car_diesel_to_bus", "from": "car_diesel", "to": "bus", "share": 0.30, "category": "transport",
+     "title": "Take the bus for some car trips",
+     "action": "Swap about {shifted} km of car driving a week for the bus, starting with a route you already know."},
+    {"id": "car_petrol_to_walk_cycle", "from": "car_petrol", "to": "walk_cycle", "share": 0.10, "category": "transport",
+     "title": "Walk or cycle the short trips",
+     "action": "Walk or cycle about {shifted} km a week of short trips (under 2 to 3 km each) instead of taking the car."},
+    {"id": "car_diesel_to_walk_cycle", "from": "car_diesel", "to": "walk_cycle", "share": 0.10, "category": "transport",
+     "title": "Walk or cycle the short trips",
+     "action": "Walk or cycle about {shifted} km a week of short trips (under 2 to 3 km each) instead of taking the car."},
+    {"id": "two_wheeler_to_walk_cycle", "from": "two_wheeler_petrol", "to": "walk_cycle", "share": 0.10, "category": "transport",
+     "title": "Skip the bike for short hops",
+     "action": "Walk or cycle about {shifted} km a week of very short trips instead of starting the bike."},
+    {"id": "auto_to_walk_cycle", "from": "auto_rickshaw", "to": "walk_cycle", "share": 0.15, "category": "transport",
+     "title": "Walk the short auto rides",
+     "action": "Walk or cycle about {shifted} km a week of short auto rides."},
+    {"id": "flight_to_train", "from": "flight", "to": "train", "share": 0.50, "category": "transport",
+     "title": "Take the train where one exists",
+     "action": "Move about {shifted} km of flying a week to rail on routes with a decent train."},
+    {"id": "beef_to_vegetarian", "from": "meal_beef", "to": "meal_vegetarian", "share": 0.50, "category": "food",
+     "title": "Swap some beef meals",
+     "action": "Swap {shifted} of your beef or buffalo meals a week for a vegetarian option like dal, rajma or paneer."},
+    {"id": "mutton_to_vegetarian", "from": "meal_mutton", "to": "meal_vegetarian", "share": 0.50, "category": "food",
+     "title": "Swap some mutton meals",
+     "action": "Swap {shifted} of your mutton meals a week for a vegetarian option like chole or a vegetable curry."},
+    {"id": "chicken_to_vegetarian", "from": "meal_chicken", "to": "meal_vegetarian", "share": 0.30, "category": "food",
+     "title": "Make some chicken meals vegetarian",
+     "action": "Make {shifted} of your chicken meals a week vegetarian."},
+    {"id": "electricity_cut", "from": "electricity_home", "to": null, "share": 0.10, "category": "energy",
+     "title": "Trim home electricity by about 10 percent",
+     "action": "Use about {shifted} kWh less a week: AC at 24 to 26 degrees, switch off standby devices, LED bulbs."},
+    {"id": "lpg_cut", "from": "lpg_cooking", "to": null, "share": 0.10, "category": "energy",
+     "title": "Cook with less gas",
+     "action": "Use lids and a pressure cooker to save about {shifted} kg of LPG a week."},
+    {"id": "waste_cut", "from": "waste_general", "to": null, "share": 0.25, "category": "waste",
+     "title": "Divert some waste from the bin",
+     "action": "Compost kitchen scraps and recycle dry waste to cut about {shifted} kg of general waste a week."}
+  ],
+  "starter_tips": [
+    {"title": "Log a few days first", "category": "general",
+     "message": "Log your travel, electricity and meals for a few days and EcoPulse will point out where your biggest savings are."},
+    {"title": "Start with electricity", "category": "energy",
+     "message": "Home electricity is often the easiest place to begin. Set the AC to 24 to 26 degrees and switch off standby devices."},
+    {"title": "Try one veg day", "category": "food",
+     "message": "Pick one day a week where every meal is vegetarian. It is a small change that adds up."}
+  ]
+}

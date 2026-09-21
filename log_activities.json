@@ -1,0 +1,9 @@
+{
+  "date": "2026-09-21",
+  "activities": [
+    {"activity_type": "car_petrol", "quantity": 12},
+    {"activity_type": "electricity_home", "quantity": 8, "notes": "AC on in the evening"},
+    {"activity_type": "meal_vegetarian", "quantity": 2},
+    {"activity_type": "meal_chicken", "quantity": 1}
+  ]
+}
